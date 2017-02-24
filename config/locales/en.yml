@@ -1,6 +1,6 @@
 en:
   app:
-    helplers:
+    helpers:
       base_title: "Ruby on Rails Tutorial Ecommerce App"
   view:
     layouts:
@@ -9,9 +9,17 @@ en:
         home: "Home"
         login: "Log in"
         help: "Help"
+        account: "Account"
+        users: "Users"
+        profile: "Profile"
+        settings: "Settings"
+        logout: "Log out"
       footer:
         about: "About"
         contact: "Contact"
+    shared:
+      errors:
+        form_contains: "The form contains" 
     static_pages:
       home:
         header: "Welcome to the Ecommerce app"
@@ -28,3 +36,19 @@ en:
         title: "About"
         header: "About"
         content: "This is about."
+    sessions:
+      new:
+        title: "Log in"
+        header: "Log in"
+        new_user: "New user?"
+        signup_now: "Sign up now!"
+        btn_login: "Log in"
+      create:
+        success_msg: "Welcome to the Ecommerce app!"
+        error_msg: "Invalid email/password combination"
+    users:
+      new:
+        title: "Sign up"
+        btn_create: "Create my account"
+      create:
+        success_msg: "Welcome to the Ecommerce app!"
