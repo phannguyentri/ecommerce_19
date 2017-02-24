@@ -1,2 +1,30 @@
 en:
-  title: "Ecommerce"
+  app:
+    helplers:
+      base_title: "Ruby on Rails Tutorial Ecommerce App"
+  view:
+    layouts:
+      header:
+        logo: "Ecommerce app"
+        home: "Home"
+        login: "Log in"
+        help: "Help"
+      footer:
+        about: "About"
+        contact: "Contact"
+    static_pages:
+      home:
+        header: "Welcome to the Ecommerce app"
+        signup: "Sign up now!"
+      help:
+        title: "Help"
+        header: "Help"
+        content: "This is help!"
+      contact:
+        title: "Contact"
+        header: "Contact"
+        content: "This is contact."
+      about:
+        title: "About"
+        header: "About"
+        content: "This is about."
