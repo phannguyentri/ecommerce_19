@@ -1,17 +1,52 @@
 en:
   app:
-    helplers:
+    helpers:
       base_title: "Ruby on Rails Tutorial Ecommerce App"
   view:
+    edit: "Edit"
+    delete: "Delete"
+    sure?: "Are you sure?"
     layouts:
       header:
         logo: "Ecommerce app"
         home: "Home"
         login: "Log in"
         help: "Help"
+        account: "Account"
+        users: "Users"
+        profile: "Profile"
+        settings: "Settings"
+        logout: "Log out"
+        manager:
+          users: "Mananger Users"
       footer:
         about: "About"
         contact: "Contact"
+    shared:
+      errors:
+        form_contains: "The form contains"
+    admin:
+      users:
+        not_found: "Can't found user"
+        index:
+          title: "Manager Users"
+          header: "Manager Users"
+          table_th:
+            name: "Name"
+            email: "Email"
+            address: "Address"
+            phone: "Phone"
+            order_number: "#"
+        edit:
+          title: "Edit user"
+          header: "Edit infomation"
+          btn_update: "Update"
+        update:
+          success_msg: "Update successful"
+          error_msg: "Update failed"
+        destroy:
+          success_msg: "Delete successful"
+          error_msg: "Delete failed"
     static_pages:
       home:
         header: "Welcome to the Ecommerce app"
@@ -28,3 +63,32 @@ en:
         title: "About"
         header: "About"
         content: "This is about."
+    sessions:
+      new:
+        title: "Log in"
+        header: "Log in"
+        new_user: "New user?"
+        signup_now: "Sign up now!"
+        btn_login: "Log in"
+      create:
+        success_msg: "Welcome to the Ecommerce app!"
+        error_msg: "Invalid email/password combination"
+    users:
+      private:
+        logged_in_user: "Please log in."
+      show:
+        admin: "Admin"
+        member: "Member"
+      new:
+        title: "Sign up"
+        header: "Sign up"
+        btn_create: "Create my account"
+      create:
+        success_msg: "Welcome to the Ecommerce app!"
+      edit:
+        title: "Edit infomation"
+        header: "Edit infomation"
+        btn_edit: "Update"
+        found_error: "Can't found user"
+      update:
+        success_msg: "Update successful"
