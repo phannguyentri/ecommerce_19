@@ -1,0 +1,35 @@
+<% provide :title, t("view.admin.categories.index.title") %>
+<h1><%= t "view.admin.categories.index.header" %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.admin.categories.index.table_th.order_number" %></th>
+      <th><%= t "view.admin.categories.index.table_th.name" %></th>
+      <th><%= t "view.edit" %></th>
+      <th><%= t "view.delete" %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @categories.each_with_index do |c, index| %>
+    <tr>
+      <td><%= count_index index %></td>
+      <td><%= link_to c.name,
+        admin_category_path(c) %></td>
+      <td><%= link_to t("view.edit"),
+        edit_admin_category_path(c), class: "btn btn-success"%>
+      </td>
+      <td>
+      <%= link_to t("view.delete"),
+        admin_category_path(c), method: :delete, class: "btn btn-danger",
+        data: {confirm: t("view.sure?")} %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="4"><div class="text-center"><%= link_to t("view.admin.categories.new.btn_new"),
+        new_admin_category_path, class: "col-md-6 col-md-offset-3 btn btn-success"%></div></td>
+    </tr>
+  </tbody>
+</table>
+<%= will_paginate @categories %>

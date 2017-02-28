@@ -1,0 +1,36 @@
+<% provide :title, t("view.admin.subcategories.index.title") %>
+<h1><%= t "view.admin.subcategories.index.header" %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.admin.subcategories.index.table_th.order_number" %></th>
+      <th><%= t "view.admin.subcategories.index.table_th.name" %></th>
+      <th><%= t "view.admin.subcategories.index.table_th.category" %></th>
+      <th><%= t "view.edit" %></th>
+      <th><%= t "view.delete" %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @subcategories.each_with_index do |s, index| %>
+    <tr>
+      <td><%= count_index index %></td>
+      <td><%= s.name %></td>
+      <td><%= s.category.name %></td>
+      <td><%= link_to t("view.edit"),
+        edit_admin_subcategory_path(s), class: "btn btn-success"%>
+      </td>
+      <td>
+      <%= link_to t("view.delete"),
+        admin_subcategory_path(s), method: :delete, class: "btn btn-danger",
+        data: {confirm: t("view.sure?")} %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="5"><div class="text-center"><%= link_to t("view.admin.subcategories.index.btn_new"),
+        new_admin_subcategory_path, class: "col-md-6 col-md-offset-3 btn btn-success"%></div></td>
+    </tr>
+  </tbody>
+</table>
+<%= will_paginate @subcategories %>

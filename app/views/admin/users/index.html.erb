@@ -16,7 +16,7 @@
     <tbody>
     <% @users.each_with_index do |u, index| %>
     <tr>
-      <td><%= index + 1 %></td>
+      <td><%= count_index index %></td>
       <td><%= u.name %></td>
       <td><%= u.email %></td>
       <td><%= u.address %></td>

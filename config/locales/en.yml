@@ -19,6 +19,8 @@ en:
         logout: "Log out"
         manager:
           users: "Mananger Users"
+          categories: "Manager Categories"
+          subcategories: "Manager Subcategories"
       footer:
         about: "About"
         contact: "Contact"
@@ -41,6 +43,62 @@ en:
           title: "Edit user"
           header: "Edit infomation"
           btn_update: "Update"
+        update:
+          success_msg: "Update successful"
+          error_msg: "Update failed"
+        destroy:
+          success_msg: "Delete successful"
+          error_msg: "Delete failed"
+      categories:
+        not_found: "Can't found category"
+        index:
+          title: "Manager categories"
+          header: "Manager categories"
+          table_th:
+            name: "Name"
+            order_number: "#"
+        show:
+          title: "List subcategories"
+          header: "List Subcategories Of"
+        edit:
+          title: "Edit category"
+          header: "Edit category"
+          btn_update: "Update"
+        new:
+          title: "New category"
+          header: "Create category"
+          btn_create: "Create"
+          btn_new: "Create new category"
+        create:
+          success_msg: "Create successful"
+        update:
+          success_msg: "Update successful"
+          error_msg: "Update failed"
+        destroy:
+          success_msg: "Delete successful"
+          error_msg: "Delete failed"
+
+      subcategories:
+        not_found: "Can't found subcategory"
+        index:
+          title: "Manager subcategories"
+          header: "Manager subcategories"
+          table_th:
+            name: "Name"
+            category: "Category"
+            order_number: "#"
+          btn_new: "Create new subcategory"
+        new:
+          title: "New subcategory"
+          header: "Create subcategory"
+          btn_create: "Create"
+        create:
+          success_msg: "Create successful"
+        edit:
+          title: "Edit subcategory"
+          header: "Edit subcategory"
+          btn_update: "Update"
+          select: "Select Category"
         update:
           success_msg: "Update successful"
           error_msg: "Update failed"

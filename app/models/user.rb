@@ -24,4 +24,5 @@ class User < ApplicationRecord
       BCrypt::Password.create(string, cost: cost)
     end
   end
+
 end
