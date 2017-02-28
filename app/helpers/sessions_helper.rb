@@ -15,4 +15,20 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def verify_admin?
+    if !current_user.nil?
+      redirect_to root_path unless current_user.is_admin?
+    else
+      redirect_to root_path
+    end
+  end
+
+  def is_admin?
+    if !current_user.nil?
+      current_user.is_admin?
+    else
+      return false
+    end
+  end
 end

@@ -4,6 +4,9 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("view.layouts.header.home"), root_path %></li>
+        <% if is_admin? %>
+        <li><%= link_to t("view.layouts.header.manager.users"), admin_users_path %></li>
+        <% end %>
         <li><%= link_to t("view.layouts.header.help"), help_path %></li>
         <% if logged_in? %>
           <li><%= link_to t("view.layouts.header.users"), "#" %></li>
@@ -13,7 +16,7 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to t("view.layouts.header.profile"), current_user %></li>
-              <li><%= link_to t("view.layouts.header.settings"), "#" %></li>
+              <li><%= link_to t("view.layouts.header.settings"), edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to t("view.layouts.header.logout"), logout_path, method: "delete" %>
