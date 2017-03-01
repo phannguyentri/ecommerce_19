@@ -7,4 +7,13 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def count_index index
+    if params[:page].nil?
+      page = 0
+    else
+      page = params[:page].to_i * Settings.per_page - Settings.per_page
+    end
+    index += page + 1
+  end
 end

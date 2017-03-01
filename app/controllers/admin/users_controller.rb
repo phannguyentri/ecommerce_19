@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :load_user, except: [:index, :new, :create]
 
   def index
-    @users = User.paginate page: params[:page],per_page: Settings.per_page
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def edit
