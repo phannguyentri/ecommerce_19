@@ -17,5 +17,6 @@ Rails.application.routes.draw do
     resources :users, except: [:show, :new, :create]
     resources :categories
     resources :subcategories, except: [:show]
+    resources :products
   end
 end

@@ -1,0 +1,49 @@
+<% provide :title, t("view.admin.products.index.title") %>
+<h1><%= t "view.admin.products.index.header" %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.admin.products.index.table_th.order_number" %></th>
+      <th><%= t "view.admin.products.index.table_th.name" %></th>
+      <th><%= t "view.admin.products.index.table_th.subcategory" %></th>
+      <th><%= t "view.admin.products.index.table_th.price" %></th>
+      <th><%= t "view.admin.products.index.table_th.quantity" %></th>
+      <th><%= t "view.admin.products.index.table_th.image" %></th>
+      <th><%= t "view.edit" %></th>
+      <th><%= t "view.delete" %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @products.each_with_index do |pro, index| %>
+    <tr>
+      <td><%= count_index index %></td>
+      <td><%= pro.name %></td>
+      <td><%= pro.subcategory.name %></td>
+      <td><%= pro.price %></td>
+      <td><%= pro.quantity %></td>
+      <td id="resize_img"><%= image_tag pro.image.url,
+        id: "resize_img", class: "img-responsive img-thumbnail" if pro.image? %>
+      </td>
+      <td><%= link_to t("view.edit"),
+        edit_admin_product_path(pro), class: "btn btn-success" %>
+      </td>
+      <td>
+      <%= link_to t("view.delete"),
+        admin_product_path(pro), method: :delete, class: "btn btn-danger",
+        data: {confirm: t("view.sure?")} %>
+      </td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="8">
+        <div class="text-center">
+        <%= link_to t("view.admin.products.index.btn_new"),
+          new_admin_product_path,
+          class: "col-md-6 col-md-offset-3 btn btn-success" %>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<%= will_paginate @products %>

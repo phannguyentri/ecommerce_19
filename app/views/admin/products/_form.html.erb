@@ -1,0 +1,39 @@
+<%= form_for [:admin, @product], html: {multipart: true} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-group">
+  <%= f.label :subcategory_id %>
+  <%= f.select :subcategory_id,
+    @subcategories.collect {|s| [ s.name, s.id ]},
+    {prompt: t("view.admin.products.new.select")},
+    class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :info %>
+  <%= f.text_field :info, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :price %> <b><%= t "view.admin.products.new.vnd" %></b>
+  <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :quantity %>
+  <%= f.select :quantity, (Settings.collect_from..Settings.collect_to).to_a,
+    {prompt: t("view.admin.products.new.select_qtt")}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :image %>
+  <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

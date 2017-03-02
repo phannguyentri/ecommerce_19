@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222033334) do
+ActiveRecord::Schema.define(version: 20170301053538) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -53,15 +53,15 @@ ActiveRecord::Schema.define(version: 20170222033334) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer  "subcategorie_id"
+    t.integer  "subcategory_id"
     t.string   "name"
     t.string   "info"
     t.string   "image"
-    t.bigint   "price"
-    t.integer  "average_rate"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["subcategorie_id"], name: "index_products_on_subcategorie_id"
+    t.integer  "price",          limit: 8
+    t.integer  "average_rate",             default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   create_table "rates", force: :cascade do |t|
@@ -76,10 +76,9 @@ ActiveRecord::Schema.define(version: 20170222033334) do
 
   create_table "subcategories", force: :cascade do |t|
     t.string   "name"
-    t.integer  "categorie_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["categorie_id"], name: "index_subcategories_on_categorie_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "suggests", force: :cascade do |t|

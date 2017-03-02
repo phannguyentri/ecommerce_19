@@ -1,0 +1,47 @@
+<div class="row">
+  <ol class="breadcrumb">
+    <li>
+      <a href="#"><%= @product.subcategory.category_name %></a>
+    </li>
+    <li>
+      <a href="#"><%= @product.subcategory_name %></a>
+    </li>
+  </ol>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= image_tag @product.image.url,
+      id: "resize_img_product",
+      class: "img-responsive img-thumbnail" if @product.image? %>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <h3 id="product-title"><%= @product.name %></h3>
+    <hr>
+    <h4><b><%= t "view.admin.products.show.info" %></b></h4>
+    <p><%= @product.info %></p>
+    <h4>
+      <b>
+        <%= t "view.admin.products.show.quantity" %>: <%= @product.quantity %>
+      </b>
+    </h4>
+    <h4>
+      <b>
+        <%= t "view.admin.products.show.price" %>: <%= @product.price %>
+        <%= t "view.admin.products.show.vnd" %>
+      </b>
+    </h4>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default btn-success">
+        <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+        <%= link_to t("view.admin.edit"), edit_admin_product_path(@product),
+          class: "white-text" %>
+      </button>
+      <button type="button" class="btn btn-default btn-danger">
+        <span class="glyphicon glyphicon-trash"></span>&nbsp;
+        <%= link_to t("view.admin.delete"), admin_product_path(@product),
+          method: :delete, class: "white-text",
+          data: {confirm: t("view.sure?")} %>
+      </button>
+    </div>
+  </div>
+</div>

@@ -21,6 +21,7 @@ en:
           users: "Mananger Users"
           categories: "Manager Categories"
           subcategories: "Manager Subcategories"
+          products: "Manager Products"
       footer:
         about: "About"
         contact: "Contact"
@@ -77,7 +78,6 @@ en:
         destroy:
           success_msg: "Delete successful"
           error_msg: "Delete failed"
-
       subcategories:
         not_found: "Can't found subcategory"
         index:
@@ -99,6 +99,46 @@ en:
           header: "Edit subcategory"
           btn_update: "Update"
           select: "Select Category"
+        update:
+          success_msg: "Update successful"
+          error_msg: "Update failed"
+        destroy:
+          success_msg: "Delete successful"
+          error_msg: "Delete failed"
+      products:
+        not_found: "Can't found product"
+        index:
+          title: "Product manager"
+          header: "Product manager"
+          table_th:
+            name: "Name"
+            subcategory: "Subcategory"
+            image: "Image"
+            order_number: "#"
+            price: "Price (VNĐ)"
+            quantity: "Quantity"
+          btn_new: "Create new product"
+        show:
+          title: "View product"
+          quantity: "Quantity"
+          price: "Price"
+          vnd: "VNĐ"
+          edit: "Edit"
+          delete: "Delete"
+        new:
+          title: "New product"
+          header: "New product"
+          btn_create: "Create"
+          select: "Select Subcategory"
+          select_qtt: "Select Quantity"
+          vnd: "(VNĐ)"
+        create:
+          success_msg: "Create successful"
+        edit:
+          title: "Edit product"
+          header: "Edit product"
+          btn_update: "Update"
+          select: "Select subcagory"
         update:
           success_msg: "Update successful"
           error_msg: "Update failed"
