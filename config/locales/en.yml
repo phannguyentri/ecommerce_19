@@ -8,20 +8,22 @@ en:
     sure?: "Are you sure?"
     layouts:
       header:
-        logo: "Ecommerce app"
+        logo: "Ecommerce"
         home: "Home"
         login: "Log in"
         help: "Help"
         account: "Account"
+        manager: "Manager"
         users: "Users"
         profile: "Profile"
         settings: "Settings"
         logout: "Log out"
         manager:
-          users: "Mananger Users"
-          categories: "Manager Categories"
-          subcategories: "Manager Subcategories"
-          products: "Manager Products"
+          users: "Users"
+          categories: "Categories"
+          subcategories: "Subcategories"
+          products: "Products"
+          orders: "Orders"
       footer:
         about: "About"
         contact: "Contact"
@@ -145,6 +147,28 @@ en:
         destroy:
           success_msg: "Delete successful"
           error_msg: "Delete failed"
+      orders:
+        not_found: "Can't found product"
+        index:
+          title: "Order manager"
+          header: "Order manager"
+          table_th:
+            name: "Name"
+            address: "Address"
+            phone: "Phone"
+            order_number: "#"
+            totall: "Total (VNĐ)"
+          btn_new: "Create new order"
+        edit:
+          title: "Edit order"
+          header: "Edit order"
+          btn_update: "Update"
+        update:
+          success_msg: "Update successful"
+        destroy:
+          success_msg: "Delete successful"
+          error_msg: "Delete failed"
+
     static_pages:
       home:
         header: "Welcome to the Ecommerce app"
