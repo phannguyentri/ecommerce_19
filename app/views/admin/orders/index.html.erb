@@ -1,0 +1,36 @@
+<% provide :title, t("view.admin.orders.index.title") %>
+<h1><%= t "view.admin.orders.index.header" %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.admin.orders.index.table_th.order_number" %></th>
+      <th><%= t "view.admin.orders.index.table_th.name" %></th>
+      <td><%= t "view.admin.orders.index.table_th.address" %></td>
+      <td><%= t "view.admin.orders.index.table_th.phone" %></td>
+      <td><%= t "view.admin.orders.index.table_th.total" %></td>
+      <th><%= t "view.edit" %></th>
+      <th><%= t "view.delete" %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @orders.each_with_index do |order, index| %>
+      <tr>
+        <td><%= count_index index %></td>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.phone %></td>
+        <td><%= order.total %></td>
+        <td><%= link_to t("view.edit"),
+          edit_admin_order_path(order), class: "btn btn-success"%>
+        </td>
+        <td>
+        <%= link_to t("view.delete"),
+          admin_order_path(order), method: :delete, class: "btn btn-danger",
+          data: {confirm: t("view.sure?")} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @orders %>
