@@ -9,6 +9,8 @@
       <td><%= t "view.admin.orders.index.table_th.address" %></td>
       <td><%= t "view.admin.orders.index.table_th.phone" %></td>
       <td><%= t "view.admin.orders.index.table_th.total" %></td>
+      <td><%= t "view.admin.orders.index.table_th.time" %></td>
+      <td><%= t "view.view" %></td>
       <th><%= t "view.edit" %></th>
       <th><%= t "view.delete" %></th>
     </tr>
@@ -17,12 +19,18 @@
     <% @orders.each_with_index do |order, index| %>
       <tr>
         <td><%= count_index index %></td>
-        <td><%= order.name %></td>
+        <td><%= link_to order.name, admin_order_path(order) %></td>
         <td><%= order.address %></td>
         <td><%= order.phone %></td>
         <td><%= order.total %></td>
+        <td>
+          <%= (time_ago_in_words order.created_at) << t("view.ago") %>
+        </td>
+        <td><%= link_to t("view.view"),admin_order_path(order),
+          class: "btn btn-info" %>
+        </td>
         <td><%= link_to t("view.edit"),
-          edit_admin_order_path(order), class: "btn btn-success"%>
+          edit_admin_order_path(order), class: "btn btn-success" %>
         </td>
         <td>
         <%= link_to t("view.delete"),

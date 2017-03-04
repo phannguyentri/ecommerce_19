@@ -6,6 +6,10 @@ en:
     edit: "Edit"
     delete: "Delete"
     sure?: "Are you sure?"
+    view: "View"
+    ago: " ago"
+    placed: "Placed"
+    cancel: "Cancel"
     layouts:
       header:
         logo: "Ecommerce"
@@ -157,8 +161,21 @@ en:
             address: "Address"
             phone: "Phone"
             order_number: "#"
-            totall: "Total (VNĐ)"
+            total: "Total (VNĐ)"
+            time: "Time"
+            change_status: "Change Status"
+            change: "Change"
           btn_new: "Create new order"
+        show:
+          title: "Show order"
+          header: "List orderitems of"
+          table_th:
+            product_name: "Product Name"
+            status: "Status"
+            quantity: "Quantity"
+            order_number: "#"
+            time: "Time"
+            totall: "Total (VNĐ)"
         edit:
           title: "Edit order"
           header: "Edit order"
@@ -168,7 +185,9 @@ en:
         destroy:
           success_msg: "Delete successful"
           error_msg: "Delete failed"
-
+      orderitems:
+        not_found: "Can't found orderitem"
+        change_fail: "Change status failed"
     static_pages:
       home:
         header: "Welcome to the Ecommerce app"

@@ -7,6 +7,14 @@ class Admin::OrdersController < ApplicationController
       per_page: Settings.per_page
   end
 
+  def show
+    @orderitems = @order.orderitems.newest.paginate page: params[:page],
+      per_page: Settings.per_page
+    return if @orderitems
+    flash[:warning] = t "view.admin.orderitems.not_found"
+    redirect_to admin_orders_path
+  end
+
   def edit
   end
 
@@ -41,5 +49,4 @@ class Admin::OrdersController < ApplicationController
     flash[:warning] = t "view.admin.orders.not_found"
     redirect_to admin_orders_path
   end
-
 end

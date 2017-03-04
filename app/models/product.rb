@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :subcategory
   has_many :rates, dependent: :destroy
-  has_many :order_items, dependent: :destroy
+  has_many :orderitems, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   delegate :name, to: :subcategory, prefix: true
