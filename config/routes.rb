@@ -18,5 +18,6 @@ Rails.application.routes.draw do
     resources :subcategories, except: [:show]
     resources :products
     resources :orders
+    resources :orderitems
   end
 end

@@ -1,0 +1,38 @@
+<% provide :title, t("view.admin.categories.index.title") %>
+<h1><%= t "view.admin.orders.show.header" %> <%= @order.name %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.admin.orders.index.table_th.order_number" %></th>
+      <th><%= t "view.admin.orders.index.table_th.product_name" %> </th>
+      <th><%= t "view.admin.orders.index.table_th.quantity" %></th>
+      <th><%= t "view.admin.orders.index.table_th.status" %></th>
+      <th><%= t "view.admin.orders.index.table_th.time" %></th>
+      <th><%= t "view.admin.orders.index.table_th.change_status" %></th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @orderitems.each_with_index do |orderitem, index| %>
+      <tr>
+        <td><%= count_index index %></td>
+        <td><%= orderitem.product_name %></td>
+        <td><%= orderitem.quantity %></td>
+        <td>
+          <span class="status label label-<%= orderitem.status ? "success" : "danger" %>">
+            <%= orderitem.status ? t("view.placed") : t("view.cancel") %>
+          </span>
+        </td>
+        <td>
+          <%= (time_ago_in_words orderitem.created_at) << t("view.ago") %>
+        </td>
+        <th>
+          <button id="<%= orderitem.id %>" data-status="<%= !orderitem.status %>"
+            class="btn btn-info change-status">
+            <%= t "view.admin.orders.index.table_th.change" %>
+          </button>
+        </th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
