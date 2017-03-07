@@ -28,6 +28,7 @@ en:
           subcategories: "Subcategories"
           products: "Products"
           orders: "Orders"
+        shop_cart: "Shopping cart"
       footer:
         about: "About"
         contact: "Contact"
@@ -204,6 +205,8 @@ en:
         title: "About"
         header: "About"
         content: "This is about."
+      list_product:
+        add_cart: "Add to cart"
     sessions:
       new:
         title: "Log in"
@@ -233,3 +236,18 @@ en:
         found_error: "Can't found user"
       update:
         success_msg: "Update successful"
+    cartitems:
+      index:
+        header: "List Cartitems"
+        product: "Product"
+        price: "Price"
+        quantity: "Quantity"
+        update-success: "Update quantity successful"
+        not_found: "Nothing cartitem in cart"
+      create:
+        add-success: "Add cartitem successful"
+        success_quantity: "Update quantity successful"
+      update:
+        change_fail: "Update quantity failed"
+      destroy:
+        delete_fail: "Delete failed"

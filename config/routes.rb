@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :users
+  resources :cartitems
 
   namespace :admin do
     root "admin#index"

@@ -27,6 +27,57 @@ $(document).ready(function() {
       }
     });
   });
+
+  $('.delete-cartitem').on('click', function(e) {
+    e.preventDefault();
+    if (confirm('<%= I18n.t("view.sure?") %>')) {
+      id = $(this).parent().attr('id');
+      $.ajax({
+        type: 'delete',
+        url : '/cartitems/'+id,
+        dataType: 'json',
+        context: this,
+        success: function(response) {
+          $(this).parents('tr').remove();
+        },
+        error: function(error_message) {
+          alert(error_message.responseText);
+        }
+      });
+    }
+  });
+
+  $('.change-quantity').bind('change', function() {
+    quantity = $(this).val();
+    $(this).parent().next().find('.btn-change-quantity').removeClass('disabled')
+      .attr('data-status', 'active');
+
+  });
+  $('.btn-change-quantity').click(function(event) {
+    if ($(this).attr('data-status') != 'disabled'){
+      id = $(this).parent().attr('id');
+      quantity = parseInt($(this).parent().prev().find('input').val());
+      $.ajax({
+        type: 'put',
+        url : '/cartitems/'+id,
+        dataType: 'json',
+        context: this,
+        data: {
+          cartitem: {
+            quantity: quantity
+          }
+        },
+        success: function(response) {
+          $(this).addClass('disabled').attr('data-status', 'disabled');;
+          alert('<%= I18n.t("view.cartitems.index.update-success") %>');
+        },
+        error: function(error_message) {
+          alert(error_message.responseText);
+        }
+      });
+    }
+  });
+
 });
 
 function check_status(status, case1, case2){

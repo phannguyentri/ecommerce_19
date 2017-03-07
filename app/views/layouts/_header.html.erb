@@ -43,7 +43,16 @@
         </li>
         <% end %>
         <li>
-            <%= link_to t("view.layouts.header.help"), help_path %>
+          <%= link_to t("view.layouts.header.help"), help_path %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to cartitems_path do %>
+            <span class="glyphicon glyphicon-shopping-cart">
+              <%= t "view.layouts.header.shop_cart" %>
+            </span>
+          <% end %>
         </li>
       </ul>
     </div>
