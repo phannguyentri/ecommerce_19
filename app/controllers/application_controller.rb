@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
     @user = User.find_by id: params[:id]
     redirect_to root_path unless @user == current_user
   end
+
+  def create_cart
+    session[:cart] = {} if session[:cart].nil?
+  end
 end
