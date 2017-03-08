@@ -70,6 +70,7 @@ $(document).ready(function() {
         success: function(response) {
           $(this).addClass('disabled').attr('data-status', 'disabled');;
           alert('<%= I18n.t("view.cartitems.index.update-success") %>');
+          $('#total').text(calculate_update_total());
         },
         error: function(error_message) {
           alert(error_message.responseText);
@@ -82,4 +83,14 @@ $(document).ready(function() {
 
 function check_status(status, case1, case2){
   return status == 'true' ? case1 : case2;
+}
+
+function calculate_update_total(){
+  var total = 0;
+  $('table#cart').find('td[data-th="Price"]').each (function() {
+    var quantity = $(this).next().find('input').val();
+    var price = $(this).text();
+    total += price*quantity;
+  });
+  return total;
 }

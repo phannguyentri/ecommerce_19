@@ -1,4 +1,6 @@
-<% provide :title, t("view.cartitems.index.title") %>
+<% provide :title, t("view.orders.new.title") %>
+<% provide :button_text, t("view.orders.new.btn_order") %>
+
 <div class="container">
   <h3 class="text-center"><b><%= t "view.cartitems.index.header" %></b></h3>
   <table id="cart" class="table table-hover table-condensed">
@@ -27,17 +29,7 @@
           </td>
           <td data-th="Price"><%= @product.price %></td>
           <td data-th="Quantity">
-            <input type="number" class="form-control text-center change-quantity"
-              value="<%= value %>" min="1">
-          </td>
-          <td id="<%= key %>" class="actions" data-th="">
-            <button class="delete-cartitem btn btn-danger btn-sm">
-              <i class="glyphicon glyphicon-trash"></i>
-            </button>
-            <button data-status="disabled"
-              class="btn-change-quantity btn btn-success btn-sm disabled">
-              <i class="glyphicon glyphicon-saved"></i>
-            </button>
+            <%= value %>
           </td>
         </tr>
         <% calculate_total @product.price, value %>
@@ -46,26 +38,31 @@
     <tfoot>
       <tr>
         <td>&nbsp</td>
-        <td>&nbsp</td>
         <td><h3><%= t "view.total" %></h3></td>
-        <td class="text-right"><h3 id="total"><%= @total %></h3></td>
+        <td class="text-right"><h3 id="total">$<%= @total %></h3></td>
       </tr>
       <tr>
         <td>&nbsp</td>
-        <td>&nbsp</td>
         <td>
-          <%= link_to root_path, class: "btn btn-default" do %>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            <%= t "view.cartitems.index.continue" %>
+          <%= link_to cartitems_path, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <%= t "view.orders.new.back" %>
           <% end %>
         </td>
         <td>
-          <%= link_to new_order_path, class: "btn btn-success" do %>
-            <span class="glyphicon glyphicon-play"></span>
-            <%= t "view.cartitems.index.checkout" %>
+          <%= link_to root_path, class: "btn btn-success" do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <%= t "view.orders.index.continue" %>
           <% end %>
         </td>
       </tr>
     </tfoot>
   </table>
+</div>
+
+<h1><%= t "view.orders.new.header" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+  </div>
 </div>
