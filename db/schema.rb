@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302032854) do
+ActiveRecord::Schema.define(version: 20170308063901) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -28,16 +28,14 @@ ActiveRecord::Schema.define(version: 20170302032854) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "orderitems", force: :cascade do |t|
     t.integer  "order_id"
     t.integer  "product_id"
     t.integer  "quantity"
     t.string   "info"
     t.boolean  "status",     default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.index ["order_id"], name: "index_order_items_on_order_id"
-    t.index ["product_id"], name: "index_order_items_on_product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -49,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170302032854) do
     t.integer  "total",      limit: 8
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.string   "email"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 

@@ -10,6 +10,7 @@ en:
     ago: " ago"
     placed: "Placed"
     cancel: "Cancel"
+    total: "Total"
     layouts:
       header:
         logo: "Ecommerce"
@@ -238,12 +239,15 @@ en:
         success_msg: "Update successful"
     cartitems:
       index:
+        title: "Shopping cart"
         header: "List Cartitems"
         product: "Product"
         price: "Price"
         quantity: "Quantity"
         update-success: "Update quantity successful"
         not_found: "Nothing cartitem in cart"
+        continue: "Continue Shopping"
+        checkout: "Checkout"
       create:
         add-success: "Add cartitem successful"
         success_quantity: "Update quantity successful"
@@ -251,3 +255,14 @@ en:
         change_fail: "Update quantity failed"
       destroy:
         delete_fail: "Delete failed"
+    orders:
+      new:
+        title: "Order"
+        btn_order: "Order"
+        header: "Receiver's Information"
+        back: "Back to cart"
+        not_found: "Nothing in cart to order!"
+      create:
+        success_msg: "Order successful!"
+        fail_msg: "Order failed"
+        trans_fail: "Transaction Failed"

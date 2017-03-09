@@ -17,4 +17,11 @@ class ApplicationController < ActionController::Base
   def create_cart
     session[:cart] = {} if session[:cart].nil?
   end
+
+  def check_cart
+    if session[:cart].empty?
+      flash[:warning] = t "view.orders.new.not_found"
+      redirect_to root_path
+    end
+  end
 end

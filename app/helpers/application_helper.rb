@@ -23,4 +23,9 @@ module ApplicationHelper
     flash[:warning] = t "view.cartitems.index.not_found"
     redirect_to root_path
   end
+
+  def calculate_total price, quantity
+    @total = Settings.total if @total.nil?
+    @total += price * quantity.to_i
+  end
 end

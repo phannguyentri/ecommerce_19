@@ -1,6 +1,8 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many :orderitems
+  has_many :orderitems, dependent: :destroy
+
+  enum status: {pending: 1, accepted: 2, reject: 3}
 
   validates :name, presence: true, length: {maximum: Settings.maximum_name}
   validates :address, presence: true,
