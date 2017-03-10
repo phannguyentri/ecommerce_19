@@ -1,0 +1,17 @@
+<% provide :title, t("view.orders.show.title") %>
+<h1><%= t "view.orders.show.header" %> <%= @order.name %></h1>
+
+<table class="table table-bordered table-hover" data-user="user">
+  <thead>
+    <tr>
+      <th><%= t "view.orders.show.table_th.product_name" %> </th>
+      <th><%= t "view.orders.show.table_th.quantity" %></th>
+      <th><%= t "view.orders.show.table_th.status" %></th>
+      <th><%= t "view.orders.show.table_th.time" %></th>
+      <th><%= t "view.orders.show.table_th.change_status" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "list_orderitems", collection: @orderitems, as: :orderitem %>
+  </tbody>
+</table>

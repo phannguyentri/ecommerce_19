@@ -1,0 +1,26 @@
+<% provide :title, t("view.admin.orders.index.title") %>
+<h1><%= t "view.orders.index.header" %></h1>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "view.orders.index.table_th.name" %></th>
+      <td><%= t "view.orders.index.table_th.address" %></td>
+      <td><%= t "view.orders.index.table_th.phone" %></td>
+      <td><%= t "view.orders.index.table_th.total" %></td>
+      <td><%= t "view.orders.index.table_th.time" %></td>
+      <td><%= t "view.orders.index.table_th.status" %></td>
+      <td><%= t "view.view" %></td>
+      <th><%= t "view.edit" %></th>
+      <td>
+        <span class="label label-danger">
+          <%= t "view.orders.index.table_th.reject" %>
+        </span>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "list_order", collection: @orders, as: :order %>
+  </tbody>
+</table>
+<%= will_paginate @orders %>

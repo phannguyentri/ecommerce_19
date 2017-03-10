@@ -3,10 +3,15 @@ $(document).ready(function() {
   $('.change-status').on('click', function(e) {
     e.preventDefault();
     id = $(this).attr('id');
+    access = $(this).parents('table').attr('data-user')
+    namespace = '/admin'
+    if (access == 'user') {
+      namespace = ''
+    }
     status = $(this).attr('data-status');
     $.ajax({
       type: 'put',
-      url : '/admin/orderitems/'+id,
+      url : namespace + '/orderitems/' +id,
       dataType: 'json',
       context: this,
       data: {
