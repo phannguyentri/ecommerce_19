@@ -11,6 +11,7 @@ en:
     placed: "Placed"
     cancel: "Cancel"
     total: "Total"
+    back: "Back"
     layouts:
       header:
         logo: "Ecommerce"
@@ -30,6 +31,9 @@ en:
           products: "Products"
           orders: "Orders"
         shop_cart: "Shopping cart"
+        history:
+          title: "History"
+          order: "Order"
       footer:
         about: "About"
         contact: "Contact"
@@ -256,6 +260,22 @@ en:
       destroy:
         delete_fail: "Delete failed"
     orders:
+      not_found: "Can't found order"
+      status_msg: "Can't modify order except when order is pending!"
+      index:
+        count: "#"
+        title: "Order User"
+        header: "Order History"
+        table_th:
+          name: "Name"
+          address: "Address"
+          phone: "Phone"
+          order_number: "#"
+          total: "Total (VNĐ)"
+          time: "Time"
+          status: "Status"
+          reject: "Reject Order"
+        reject: "Reject"
       new:
         title: "Order"
         btn_order: "Order"
@@ -266,3 +286,22 @@ en:
         success_msg: "Order successful!"
         fail_msg: "Order failed"
         trans_fail: "Transaction Failed"
+      show:
+        title: "Show order"
+        header: "List orderitems of"
+        not_found: "Can't found orderitem"
+        table_th:
+          product_name: "Product Name"
+          status: "Status"
+          quantity: "Quantity"
+          order_number: "#"
+          time: "Time"
+          totall: "Total (VNĐ)"
+      edit:
+        title: "Edit user order"
+        header: "Update order"
+        btn_order: "Update"
+      update:
+        success_msg: "Update successful!"
+        reject_ok: "Reject order successful!"
+        reject_fail: "Reject order failed"

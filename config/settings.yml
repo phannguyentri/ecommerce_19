@@ -10,3 +10,4 @@ collect_from: 1
 collect_to: 99
 add_cartitem: 1
 total: 0
+reject_order: 3

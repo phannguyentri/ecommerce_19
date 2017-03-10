@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users
   resources :cartitems
   resources :orders
+  resources :orderitems
 
   namespace :admin do
     root "admin#index"

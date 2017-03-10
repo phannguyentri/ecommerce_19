@@ -24,4 +24,11 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def correct_order_user
+    @order = Order.find_by id: params[:id]
+    unless @order == (current_user.orders.find_by id: params[:id])
+      redirect_to root_path
+    end
+  end
 end

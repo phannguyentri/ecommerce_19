@@ -1,0 +1,20 @@
+<tr>
+  <td><%= link_to order.name, order_path(order) %></td>
+  <td><%= order.address %></td>
+  <td><%= order.phone %></td>
+  <td><%= order.total %></td>
+  <td>
+    <%= (time_ago_in_words order.created_at) << t("view.ago") %>
+  </td>
+  <td><%= order.status %></td>
+  <td><%= link_to t("view.view"), order_path(order),
+    class: "btn btn-info" %>
+  </td>
+  <td><%= link_to t("view.edit"),
+    edit_order_path(order), class: "btn btn-success" %>
+  </td>
+  <td><%= link_to t("view.orders.index.reject"),
+    order_path(order, status: Settings.reject_order), method: :put,
+    class: "btn btn-danger" %>
+  </td>
+</tr>
