@@ -14,5 +14,9 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: {only_integer: true}
   validates :image, presence: true, allow_nil: true
 
-  scope :list_products_desc, ->{order "created_at desc"}
+  scope :list_products_desc, ->{order created_at: :desc}
+  scope :search_name, -> search {where "name like ?", "%#{search}%"}
+  scope :min_price, -> search {where "price >= ?", search}
+  scope :max_price, -> search {where "price <= ?", search}
+  scope :search_rate, -> search {where "average_rate >= ?", search}
 end

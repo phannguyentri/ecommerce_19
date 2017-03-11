@@ -11,3 +11,5 @@ collect_to: 99
 add_cartitem: 1
 total: 0
 reject_order: 3
+limit_info: 80
+separator_info: " "

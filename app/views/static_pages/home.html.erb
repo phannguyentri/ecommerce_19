@@ -1,3 +1,4 @@
 <div class="row">
-  <%= render "list_products" %>
+  <%= render partial: "list_products", collection: @list_products, as: :product %>
 </div>
+<%= will_paginate @list_products %>

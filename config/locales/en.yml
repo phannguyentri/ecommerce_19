@@ -3,6 +3,8 @@ en:
     helpers:
       base_title: "Ruby on Rails Tutorial Ecommerce App"
   view:
+    min: "Min"
+    max: "Max"
     edit: "Edit"
     delete: "Delete"
     sure?: "Are you sure?"
@@ -12,6 +14,7 @@ en:
     cancel: "Cancel"
     total: "Total"
     back: "Back"
+    not_found_categories: "Not found categories"
     layouts:
       header:
         logo: "Ecommerce"
@@ -31,9 +34,11 @@ en:
           products: "Products"
           orders: "Orders"
         shop_cart: "Shopping cart"
+        search: "Search"
         history:
           title: "History"
           order: "Order"
+        list_categories: "List Categories"
       footer:
         about: "About"
         contact: "Contact"
@@ -305,3 +310,17 @@ en:
         success_msg: "Update successful!"
         reject_ok: "Reject order successful!"
         reject_fail: "Reject order failed"
+    search:
+      title: "Search"
+      header: "Search"
+      btn_search: "Search"
+      find_by:
+        name: "Name"
+        price: "Price"
+        rate: "Rate"
+        not_found: "Not found product with key word "
+    subcategories:
+      title: "Subcategory"
+      not_found: "Not found this subcategory"
+      not_found_product: "Not found product"
+
