@@ -11,5 +11,14 @@ collect_to: 99
 add_cartitem: 1
 total: 0
 reject_order: 3
-limit_info: 80
+limit_info: 70
 separator_info: " "
+rating: 0
+average_total: 0
+maximum_comment: 500
+del_success_cmt: 1
+del_fail_cmt: 2
+del_not_found_cmt: 3
+average_total: 0
+width_comment_face: 300
+num_post: 4

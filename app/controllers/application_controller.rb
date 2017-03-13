@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
   include SessionsHelper
+  include RatesHelper
 
   def logged_in_user
     unless logged_in?
@@ -29,6 +30,20 @@ class ApplicationController < ActionController::Base
   def correct_order_user
     @order = Order.find_by id: params[:id]
     unless @order == (current_user.orders.find_by id: params[:id])
+      redirect_to root_path
+    end
+  end
+
+  def correct_rating_user
+    @rate = Rate.find_by id: params[:id]
+    unless @rate == (current_user.rates.find_by id: params[:id])
+      redirect_to root_path
+    end
+  end
+
+  def correct_comment_user
+    @comment = Comment.find_by id: params[:id]
+    unless @comment == (current_user.comments.find_by id: params[:id])
       redirect_to root_path
     end
   end

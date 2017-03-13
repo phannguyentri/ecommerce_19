@@ -1,0 +1,13 @@
+switch(<%= @status %>) {
+  case 1:
+    $('#comment-<%= @comment.id %>').fadeOut(2000, function() {
+      $(this).remove();
+    });
+    alert('<%= I18n.t("view.comments.destroy.success") %>');
+    break;
+  case 2:
+    alert('<%= I18n.t("view.comments.destroy.fail") %>');
+    break;
+  default:
+    alert('<%= I18n.t("view.comments.destroy.not_found") %>');
+}

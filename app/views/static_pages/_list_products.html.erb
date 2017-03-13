@@ -1,7 +1,9 @@
 <div class="col-md-3 col-sm-6">
   <span class="thumbnail">
-    <img src="<%= product.image %>" alt="...">
-    <h4><%= product.name %></h4>
+    <%= link_to product_path(product) do %>
+      <img src="<%= product.image %>">
+    <% end %>
+    <h4><%= link_to product.name, product_path(product) %></h4>
     <div class="ratings">
       <span class="glyphicon glyphicon-star"></span>
       <span class="glyphicon glyphicon-star"></span>

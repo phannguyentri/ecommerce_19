@@ -2,6 +2,9 @@ en:
   app:
     helpers:
       base_title: "Ruby on Rails Tutorial Ecommerce App"
+  rates:
+    success_msg: "Thank you for rating!"
+    error_msg: "Have problem with your rate, please try again."
   view:
     min: "Min"
     max: "Max"
@@ -14,6 +17,7 @@ en:
     cancel: "Cancel"
     total: "Total"
     back: "Back"
+    delete: "Detele"
     not_found_categories: "Not found categories"
     layouts:
       header:
@@ -323,4 +327,27 @@ en:
       title: "Subcategory"
       not_found: "Not found this subcategory"
       not_found_product: "Not found product"
-
+    comments:
+      made_comment: "made a comment."
+      create:
+        fail_msg: "Have a problem, please try again."
+      destroy:
+        success: "Delete successful"
+        fail: "Have a problem with delete!"
+        not_found: "Not found this comment!"
+    products:
+      share: "Share"
+      rate: "Rate"
+      not_found: "Not found this product"
+      leave_comment: "Leave a Comment:"
+      comment: "Comment"
+      write: "Write a comment"
+      pls_login: "Please login to comment and rate for this product!"
+      create: "Create the first comment for this product!"
+      show:
+        title: "View product"
+        quantity: "Quantity"
+        price: "Price"
+        vnd: "VNĐ"
+        info: "Infomation"
+        average_rate: "Average Rate:"
