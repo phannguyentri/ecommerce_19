@@ -1,0 +1,6 @@
+<% provide :title, t("view.subcategories.title") %>
+<h1><%= @subcategory.name %></h1>
+
+<%= render partial: "static_pages/list_products", collection: @products,
+  as: :product %>
+<%= will_paginate @products %>
