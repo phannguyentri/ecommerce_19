@@ -1,0 +1,115 @@
+<div class="row">
+  <ol class="breadcrumb">
+    <li>
+      <a href="#"><%= @product.subcategory.category_name %></a>
+    </li>
+    <li>
+      <a href="#"><%= @product.subcategory_name %></a>
+    </li>
+  </ol>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <%= image_tag @product.image.url,
+      id: "resize_img_product",
+      class: "img-responsive img-thumbnail" if @product.image? %>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <h3 id="product-title"><%= @product.name %></h3>
+    <hr>
+    <h4><b><%= t "view.products.show.info" %></b></h4>
+    <p><%= @product.info %></p>
+    <h4>
+      <b>
+        <%= t "view.products.show.quantity" %>: <%= @product.quantity %>
+      </b>
+    </h4>
+    <h4>
+      <b>
+        <%= t "view.products.show.price" %>: <%= @product.price %>
+        <%= t "view.products.show.vnd" %>
+      </b>
+    </h4>
+    <div class="btn-group" role="group">
+      <%= link_to t("view.static_pages.list_product.add_cart"),
+        cartitems_path(id: @product.id), method: :post,
+        class: "btn btn-info right" %>
+    </div>
+    <hr>
+    <% if logged_in? %>
+      <div class="row">
+        <h4><%= t "view.products.rate" %></h4>
+        <div class="lead">
+          <div id="stars" class="starrr" data-product="<%= @product.id %>"
+            data-user="<%= current_user.id %>" data-rating="<%= @rating %>"
+            data-rate="<%= @rate.nil? ? "" : @rate.id %>">
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <h3>
+      <b>
+        <span class="label label-default">
+          <%= t "view.products.show.average_rate" %>
+        </span>
+        &nbsp;
+        <span id="average" class="label label-success">
+          <%= @product.average_rate %>
+        </span>
+      </b>
+    </h3>
+    <br>
+    <div class="fb-share-button" data-href="<%= request.original_url %>"
+      data-layout="button" data-size="small" data-mobile-iframe="true">
+        <a class="fb-xfbml-parse-ignore" target="_blank"></a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <% if logged_in? %>
+        <div class="well">
+          <%= form_for @new_comment, remote: :true do |comment| %>
+            <%= render "shared/error_messages", object: comment.object %>
+            <div class="form-group">
+              <h4><%= t "view.products.leave_comment" %></h4>
+              <%= comment.text_area :content,
+                placeholder: t("view.products.write"), class: "form-control" %>
+            </div>
+            <%= comment.hidden_field :user_id, value: current_user.id %>
+            <%= comment.hidden_field :product_id, value: @product.id %>
+            <%= comment.submit t("view.products.comment"), class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="alert alert-warning">
+          <strong><%= t "view.products.pls_login" %></strong>
+        </div>
+      <% end %>
+    </div>
+    <div id="list-comment" class="col-md-8">
+      <% if @comments.empty? %>
+        <div class="alert alert-default fade in alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close"
+            title="close">×</a>
+          <strong><%= t "view.products.create" %></strong>
+        </div>
+      <% else %>
+        <%= render partial: "list_comments", collection: @comments,
+          as: :comment %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="fb-comments" data-href="<%= request.original_url %>"
+        data-width=<%= Settings.width_comment_face %>
+        data-numposts=<%= Settings.num_post %>
+        data-order-by="reverse_time">
+      </div>
+    </div>
+  </div>
+  <%= will_paginate @comments %>
+</div>
+<%= @section.inspect %>

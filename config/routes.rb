@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   resources :orderitems, only: :update
   resources :search, only: :index
   resources :subcategories, only: :show
+  resources :products, only: :show
+  resources :rates, only: [:create, :update]
+  resources :comments
 
   namespace :admin do
     root "admin#index"
