@@ -22,3 +22,4 @@ del_not_found_cmt: 3
 average_total: 0
 width_comment_face: 300
 num_post: 4
+max_name_suggest: 300

@@ -17,8 +17,14 @@ en:
     cancel: "Cancel"
     total: "Total"
     back: "Back"
-    delete: "Detele"
     not_found_categories: "Not found categories"
+    order_mail: "Order mail"
+    mail:
+      thank: "Thanks for using our service"
+      your_info: "Your infomation order:"
+      name: "Name:"
+      address: "Address:"
+      total: "Total:"
     layouts:
       header:
         logo: "Ecommerce"
@@ -203,6 +209,23 @@ en:
       orderitems:
         not_found: "Can't found orderitem"
         change_fail: "Change status failed"
+      suggests:
+        not_found_sub: "Not found subcategories"
+        not_found_suggest: "Not found suggest"
+        index:
+          title: "Suggests"
+          header: "List suggests"
+          not_found: "Not found suggest"
+          content: "Content"
+          subcategory: "Subcategory"
+          time: "Time"
+          status: "Status"
+        edit:
+          title: "Edit Suggest"
+          btn_update: "Update"
+          header: "Update suggest"
+        update:
+          success_msg: "Update successful"
     static_pages:
       home:
         header: "Welcome to the Ecommerce app"
@@ -270,6 +293,7 @@ en:
         delete_fail: "Delete failed"
     orders:
       not_found: "Can't found order"
+      cant_modify: "Can't modify this suggest except when order is pending!"
       status_msg: "Can't modify order except when order is pending!"
       index:
         count: "#"
@@ -335,6 +359,32 @@ en:
         success: "Delete successful"
         fail: "Have a problem with delete!"
         not_found: "Not found this comment!"
+    suggests:
+      subcategories: "Select subcategories"
+      not_found_sub: "Not found subcategories"
+      index:
+        title: "Suggest History"
+        header: "Suggests History"
+        not_found: "Not found suggest"
+        content: "Content"
+        subcategory: "Subcategory"
+        time: "Time"
+        status: "Status"
+      new:
+        title: "Create Suggest"
+        btn_create: "Create"
+        header: "Create a suggest"
+      edit:
+        title: "Edit Suggest"
+        btn_create: "Update"
+        header: "Update suggest"
+      create:
+        success_msg: "Send suggest to admin successful!"
+      update:
+        success_msg: "Update suggest successful!"
+      destroy:
+        success_msg: "Delete suggest successful!"
+        fail_msg: "Delete suggest failed!"
     products:
       share: "Share"
       rate: "Rate"

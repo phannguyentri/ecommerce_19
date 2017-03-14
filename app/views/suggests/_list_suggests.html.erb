@@ -1,0 +1,14 @@
+<tr>
+  <td><%= suggest.name %></td>
+  <td><%= suggest.subcategory.name %></td>
+  <td>
+    <%= (time_ago_in_words suggest.created_at) << t("view.ago") %>
+  </td>
+  <td><%= suggest.status %></td>
+  <td><%= link_to t("view.delete"), suggest_path(suggest), method: :delete,
+    data: {confirm: t("view.sure?")}, class: "btn btn-danger" %></td>
+  <td>
+    <%= link_to t("view.edit"), edit_suggest_path(suggest),
+      class: "btn btn-success" %>
+  </td>
+</tr>

@@ -1,0 +1,19 @@
+<%= form_for @suggest do |suggest| %>
+  <%= render "shared/error_messages", object: suggest.object %>
+
+  <div class="form-group">
+  <%= suggest.label :name %>
+  <%= suggest.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= suggest.label :subcategory_id %>
+  <%= suggest.select :subcategory_id,
+    @subcategories.collect {|subcategory| [ subcategory.name, subcategory.id ]},
+    {prompt: t("view.suggests.subcategories")},
+    class: "form-control" %>
+  </div>
+
+  <%= suggest.submit yield(:button_text),
+    class: "btn btn-primary col-md-4 col-md-offset-4" %>
+<% end %>

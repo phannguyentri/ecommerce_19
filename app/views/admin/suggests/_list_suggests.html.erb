@@ -1,0 +1,11 @@
+<tr>
+  <td><%= suggest.name %></td>
+  <td><%= suggest.subcategory_name %></td>
+  <td>
+    <%= (time_ago_in_words suggest.created_at) << t("view.ago") %>
+  </td>
+  <td><%= suggest.status %></td>
+  <td>
+    <%= link_to t("view.edit"), edit_admin_suggest_path(suggest), class: "btn btn-success" %>
+  </td>
+</tr>

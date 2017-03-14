@@ -1,0 +1,26 @@
+<% provide :title, t("view.admin.suggests.index.title") %>
+<h1><%= t "view.admin.suggests.index.header" %></h1>
+
+<% if @suggests.empty? %>
+  <div class="alert alert-warning">
+    <strong>
+      <%= t("view.admin.suggests.index.not_found") %>
+    </strong>
+  </div>
+<% else %>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th><%= t "view.admin.suggests.index.content" %></th>
+        <td><%= t "view.admin.suggests.index.subcategory" %></td>
+        <td><%= t "view.admin.suggests.index.time" %></td>
+        <td><%= t "view.admin.suggests.index.status" %></td>
+        <th><%= t "view.admin.suggests.index.edit" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "list_suggests", collection: @suggests, as: :suggest %>
+    </tbody>
+  </table>
+  <%= will_paginate @suggests %>
+<% end %>

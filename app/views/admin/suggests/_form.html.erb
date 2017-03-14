@@ -1,0 +1,13 @@
+<%= form_for @suggest do |suggest| %>
+  <%= render "shared/error_messages", object: suggest.object %>
+
+  <div class="form-group">
+    <%= suggest.label :status %>
+    <%= suggest.select :status,
+      Suggest.statuses.keys.map{|status| [status.titleize, status]},
+      {}, {class: "form-control"} %>
+  </div>
+
+  <%= suggest.submit yield(:button_text),
+    class: "btn btn-primary col-md-4 col-md-offset-4" %>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170308063901) do
+ActiveRecord::Schema.define(version: 20170314094004) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -82,12 +82,12 @@ ActiveRecord::Schema.define(version: 20170308063901) do
 
   create_table "suggests", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "subcategorie_id"
+    t.integer  "subcategory_id"
     t.string   "name"
-    t.integer  "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["subcategorie_id"], name: "index_suggests_on_subcategorie_id"
+    t.integer  "status",         default: 1
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["subcategory_id"], name: "index_suggests_on_subcategory_id"
     t.index ["user_id"], name: "index_suggests_on_user_id"
   end
 
