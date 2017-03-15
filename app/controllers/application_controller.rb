@@ -48,6 +48,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def correct_suggest_user
+    @suggest = Suggest.find_by id: params[:id]
+    unless @suggest == (current_user.suggests.find_by id: params[:id])
+      redirect_to root_path
+    end
+  end
+
   def load_categories
     @all_categories = Category.all
     if @all_categories.empty?

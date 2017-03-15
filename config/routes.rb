@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :products, only: :show
   resources :rates, only: [:create, :update]
   resources :comments
+  resources :suggests
 
   namespace :admin do
     root "admin#index"
@@ -27,5 +28,6 @@ Rails.application.routes.draw do
     resources :products
     resources :orders
     resources :orderitems
+    resources :suggests
   end
 end
