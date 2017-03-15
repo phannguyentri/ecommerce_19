@@ -10,6 +10,7 @@
       <td><%= t "view.admin.orders.index.table_th.phone" %></td>
       <td><%= t "view.admin.orders.index.table_th.total" %></td>
       <td><%= t "view.admin.orders.index.table_th.time" %></td>
+      <td><%= t "view.status" %></td>
       <td><%= t "view.view" %></td>
       <th><%= t "view.edit" %></th>
       <th><%= t "view.delete" %></th>
@@ -26,6 +27,7 @@
         <td>
           <%= (time_ago_in_words order.created_at) << t("view.ago") %>
         </td>
+        <td><%= order.status %></td>
         <td><%= link_to t("view.view"),admin_order_path(order),
           class: "btn btn-info" %>
         </td>

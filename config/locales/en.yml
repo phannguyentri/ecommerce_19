@@ -17,6 +17,8 @@ en:
     cancel: "Cancel"
     total: "Total"
     back: "Back"
+    status: "Status"
+    hot_prorduct: "Hot Product"
     not_found_categories: "Not found categories"
     order_mail: "Order mail"
     mail:

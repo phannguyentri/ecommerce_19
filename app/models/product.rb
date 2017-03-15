@@ -19,4 +19,6 @@ class Product < ApplicationRecord
   scope :min_price, -> search {where "price >= ?", search}
   scope :max_price, -> search {where "price <= ?", search}
   scope :search_rate, -> search {where "average_rate >= ?", search}
+  scope :hot_rate, ->{order(average_rate: :asc, created_at: :desc).
+    limit Settings.hot_products}
 end

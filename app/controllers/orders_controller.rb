@@ -34,6 +34,7 @@ class OrdersController < ApplicationController
             raise t "view.orders.create.trans_fail" unless @orderitem.save!
           end
         end
+        UserMailer.order_mail(current_user, @order).deliver_now
         flash[:success] = t "view.orders.create.success_msg"
         redirect_to root_path
       else

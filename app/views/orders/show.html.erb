@@ -8,7 +8,9 @@
       <th><%= t "view.orders.show.table_th.quantity" %></th>
       <th><%= t "view.orders.show.table_th.status" %></th>
       <th><%= t "view.orders.show.table_th.time" %></th>
-      <th><%= t "view.orders.show.table_th.change_status" %></th>
+      <% if @order.pending? %>
+        <th><%= t "view.orders.show.table_th.change_status" %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
