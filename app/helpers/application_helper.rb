@@ -28,4 +28,33 @@ module ApplicationHelper
     @total = Settings.total if @total.nil?
     @total += price * quantity.to_i
   end
+
+  def show_hot_product hot_products
+    active = Settings.hot_active
+    count = Settings.init_count
+    html = ""
+    hot_products.each do |product|
+      count += Settings.increase_count
+      if active == Settings.is_active && count == Settings.is_first
+        active = Settings.not_active
+        html << "<div class='item active'>"
+        html << "<div class='row'>"
+      else
+        if count == Settings.is_first
+          html << "<div class='item'>"
+          html << "<div class='row'>"
+        end
+      end
+        html << "<div class='col-md-4'>"
+        html << "<a class='thumbnail' href='/products/#{product.id}'><img
+            src='#{product.image.url}'></a>"
+        html << "</div>"
+      if count == Settings.is_last
+        count = Settings.init_count
+        html << "</div>"
+        html << "</div>"
+      end
+    end
+    return html
+  end
 end

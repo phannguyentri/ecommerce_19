@@ -23,3 +23,11 @@ average_total: 0
 width_comment_face: 300
 num_post: 4
 max_name_suggest: 300
+hot_active: 1
+init_count: 0
+increase_count: 1
+is_active: 1
+is_first: 1
+not_active: 0
+is_last: 3
+hot_products: 6

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <h2><%= t "view.hot_product" %></h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <%= raw show_hot_product @hot_products %>
+        </div>
+        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#media" class="right carousel-control">›</a>
+      </div>
+    </div>
+  </div>
+</div>

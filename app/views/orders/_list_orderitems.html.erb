@@ -9,10 +9,12 @@
   <td>
     <%= (time_ago_in_words orderitem.created_at) << t("view.ago") %>
   </td>
-  <th>
-    <button id="<%= orderitem.id %>" data-status="<%= !orderitem.status %>"
-      class="btn btn-info change-status">
-      <%= t "view.admin.orders.index.table_th.change" %>
-    </button>
-  </th>
+  <% if @order.pending? %>
+    <th>
+      <button id="<%= orderitem.id %>" data-status="<%= !orderitem.status %>"
+        class="btn btn-info change-status">
+        <%= t "view.admin.orders.index.table_th.change" %>
+      </button>
+    </th>
+  <% end %>
 </tr>

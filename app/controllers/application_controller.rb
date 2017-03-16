@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
+  before_action :load_hot_products
+  
   include SessionsHelper
   include RatesHelper
 
@@ -59,6 +61,14 @@ class ApplicationController < ActionController::Base
     @all_categories = Category.all
     if @all_categories.empty?
       flash[:warning] = t "view.not_found_categories"
+      redirect_to root_path
+    end
+  end
+
+  def load_hot_products
+    @hot_products = Product.hot_rate
+    if @hot_products.empty?
+      flash[:warning] = t "view.not_found"
       redirect_to root_path
     end
   end
