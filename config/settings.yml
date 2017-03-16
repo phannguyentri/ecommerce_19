@@ -31,3 +31,14 @@ is_first: 1
 not_active: 0
 is_last: 3
 hot_products: 6
+one_month_ago: 1
+two_month_ago: 2
+status_true: true
+status_false: false
+format_month: "%B"
+background_red: "rgba(255, 99, 132, 0.2)"
+background_purple: "rgba(153, 102, 255, 0.2)"
+background_blue: "rgba(54, 162, 235, 0.2)"
+border_red: "rgba(255,99,132,1)"
+border_purple: "rgba(153, 102, 255, 1)"
+border_blue: "rgba(54, 162, 235, 1)"

@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="well alert-success"><%= t "view.statistics.header" %></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <%= bar_chart @data_total %>
+    </div>
+    <div class="col-md-6">
+      <%= bar_chart @data_quantity_orders %>
+    </div>
+  </div>
+</div>

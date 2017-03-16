@@ -2,9 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :load_categories
   before_action :load_hot_products
-  
+
   include SessionsHelper
   include RatesHelper
+  include StatisticsHelper
 
   def logged_in_user
     unless logged_in?

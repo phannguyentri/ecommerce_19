@@ -21,6 +21,10 @@ en:
     hot_prorduct: "Hot Product"
     not_found_categories: "Not found categories"
     order_mail: "Order mail"
+    statistics:
+      header: "Statistic Orders"
+      total_title: "Total money of three month"
+      quantity_order: "Quantity order of three month"
     mail:
       thank: "Thanks for using our service"
       your_info: "Your infomation order:"
@@ -45,11 +49,14 @@ en:
           subcategories: "Subcategories"
           products: "Products"
           orders: "Orders"
+          suggests: "Suggests"
+          statistics: "Statistics"
         shop_cart: "Shopping cart"
         search: "Search"
         history:
           title: "History"
           order: "Order"
+          suggests: "Suggests"
         list_categories: "List Categories"
       footer:
         about: "About"
@@ -372,6 +379,7 @@ en:
         subcategory: "Subcategory"
         time: "Time"
         status: "Status"
+        send_suggest: "Send new suggest for admin"
       new:
         title: "Create Suggest"
         btn_create: "Create"

@@ -21,6 +21,12 @@
     </thead>
     <tbody>
       <%= render partial: "list_suggests", collection: @suggests, as: :suggest %>
+      <tr>
+        <td colspan="6" class="text-center">
+          <%= link_to t("view.suggests.index.send_suggest"), new_suggest_path,
+            class: "btn btn-success" %>
+        </td>
+      </tr>
     </tbody>
   </table>
   <%= will_paginate @suggests %>

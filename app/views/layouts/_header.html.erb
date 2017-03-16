@@ -28,6 +28,10 @@
               admin_products_path %></li>
             <li><%= link_to t("view.layouts.header.manager.orders"),
               admin_orders_path %></li>
+            <li><%= link_to t("view.layouts.header.manager.suggests"),
+              admin_suggests_path %></li>
+            <li><%= link_to t("view.layouts.header.manager.statistics"),
+              admin_statistics_path %></li>
           </ul>
         </li>
         <% end %>
@@ -36,8 +40,8 @@
             <%= t "view.layout.header.list_categories" %> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <%= render partial: "layouts/list_categories", collection: @all_categories,
-              as: :category %>
+            <%= render partial: "layouts/list_categories",
+              collection: @all_categories, as: :category %>
           </ul>
         </li>
       </ul>
@@ -62,6 +66,8 @@
             <ul class="dropdown-menu multi-level">
               <li><%= link_to t("view.layouts.header.history.order"),
                 orders_path %></li>
+              <li><%= link_to t("view.layouts.header.history.suggests"),
+                suggests_path %></li>
             </ul>
           </li>
           <li>

@@ -1,5 +1,5 @@
 class SuggestsController < ApplicationController
-  before_action :logged_in_user correct_suggest_user
+  before_action :logged_in_user
   before_action :correct_suggest_user, only: [:edit, :update, :destroy]
   before_action :load_suggest, only: [:edit, :update, :destroy]
   before_action :check_status, only: [:edit, :update, :destroy]

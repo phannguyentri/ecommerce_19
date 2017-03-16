@@ -13,5 +13,18 @@ class Order < ApplicationRecord
     length: {in: Settings.min_range_phone..Settings.max_range_phone}
   validates :user_id, presence: true
 
-  scope :newest, ->{order "created_at desc"}
+  scope :newest, ->{order created_at: :desc}
+  scope :this_month, -> do
+    where("created_at >= ? AND created_at <= ?",
+    Time.now.beginning_of_month, Time.now.end_of_month)
+  end
+  scope :last_month, -> do
+    where("created_at >= ? AND created_at <= ?",
+    Settings.one_month_ago.month.ago.beginning_of_month,
+    Settings.one_month_ago.month.ago.end_of_month)
+  end
+  scope :two_month_ago, -> do where("created_at >= ? AND created_at <= ?",
+    Settings.two_month_ago.month.ago.beginning_of_month,
+    Settings.two_month_ago.month.ago.end_of_month)
+  end
 end

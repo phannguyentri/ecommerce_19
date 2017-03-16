@@ -29,5 +29,6 @@ Rails.application.routes.draw do
     resources :orders
     resources :orderitems
     resources :suggests
+    resources :statistics, only: :index
   end
 end
